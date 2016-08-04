@@ -1,2 +1,14 @@
-<h1>Doses#new</h1>
-<p>Find me in app/views/doses/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h2>New dose for <%= @cocktail.name %></h2>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description, label: false, placeholder: "description e.g. 100ml" %>
+      <%= f.input :ingredient_id, label: false, collection: @ingredients, prompt: "Select an ingredient" %>
+      <%# f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, 'id', 'name') %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
