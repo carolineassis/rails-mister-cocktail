@@ -6,7 +6,7 @@
       <%= link_to "New cocktail", new_cocktail_path, class: "btn btn-primary" %>
       <hr>
       <div>
-        <% @cocktails.each do |c| %>
+        <% @cocktails.order(:name).each do |c| %>
         <div>
           <%= link_to c.name.capitalize, cocktail_path(c) %>
         </div>
